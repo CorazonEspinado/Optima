@@ -3,8 +3,11 @@
 @section ('content')
 
     <div class="container">
-
+ 
         <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="btn btn-primary" href="{{'admin/rooms'}}" role="button">Календарь помещений</a>
+            </li>
             <li class="nav-item">
                 <a class="btn btn-primary" href="{{'/users'}}" role="button">Управление пользователями</a>
             </li>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin\calendar;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +16,7 @@ class RoomController extends Controller
    public function index() {
 $structures=structure::all();
 $users=User::all();
-return view ('rooms', compact('users','structures'));
+return view ('admin.calendar.rooms', compact('users','structures'));
        
    }
 
@@ -52,6 +52,7 @@ public function GetRooms() {
 }
 
 public function GetEventInfo(request $request) {
+    
 	$event=Calendar::find($request->id);
 	return response ($event);
 }

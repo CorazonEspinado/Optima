@@ -20,49 +20,25 @@
 <script src="{{asset('js/custom.js')}}"></script>
 <link href="{{ asset('js/jquery-ui/jquery-ui.css') }}" rel="stylesheet">
 <link href="{{ asset('DataTables/datatables.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{'css/custom.css'}}">
-   
-      
-   
-    <link rel="stylesheet" href="{{'css/jquery-ui-timepicker-addon.min.css'}}">
-    
-
-    <script src="{{asset('js/popper.min.js')}}"></script>
-
+<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+  <link rel="stylesheet" href="{{asset('css/jquery-ui-timepicker-addon.min.css')}}">
+   <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}">  </script>
     <script src="{{asset('DataTables/datatables.js')}}">  </script>
      <script src="{{asset('js/jquery-ui/jquery-ui.js')}}"></script>
     <script src="{{asset('js/moment.js')}}"></script>
     <script src="{{asset('js/datetimepicker/jquery-ui-timepicker-addon.js')}}"></script>
-    
-    
-    <script src="{{asset('js/datetimepicker/jquery-ui-timepicker-lv.js')}}"></script>
+     <script src="{{asset('js/datetimepicker/jquery-ui-timepicker-lv.js')}}"></script>
      <script src="{{asset('js/datetimepicker/jquery-ui-timepicker-ru.js')}}"></script>
-
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/config.js')}}"></script>
     <link href="{{ asset('calendar/fullcalendar.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('calendar/scheduler/dist/scheduler.css') }}" rel="stylesheet"> -->
-    
     <script src="{{asset('calendar/fullcalendar.js')}}"></script>
-    <!-- <script src="{{asset('calendar/scheduler/dist/scheduler.js')}}"></script> -->
     
-
-
-
+    
 </head>
 
 <body>
-
-<!-- JS code -->
-
-<!--JS below-->
-
-
-<!--modal-->
-
-
-
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -144,7 +120,7 @@
 
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="btn btn-primary" href="{{'/rooms'}}" role="button">Календарь помещений</a>
+           
         </li>
 
 

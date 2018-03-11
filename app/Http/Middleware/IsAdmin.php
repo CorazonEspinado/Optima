@@ -18,8 +18,8 @@ class IsAdmin
     {
      //   dd (Auth::user());
         if (Auth::user()->usertype !== "Администратор") {
-        //    dd (Auth::user()->usertype);
-            return redirect('login');
+        Auth::logout();
+            return redirect('/login');
         }
 
         return $next($request);

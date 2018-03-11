@@ -142,11 +142,8 @@ $(document).ready(function() {
       data:data,
       url:'calendar/checkEvent',
       success:function(response) {
-        console.log(response);
-        if (!$.trim(response)) {
-         console.log(data);
-         // alert ('empty');
-         //-----------------------
+          if (!$.trim(response)) {
+           //-----------------------
          $.ajax({
           type:'POST',
           dataType:'json',
@@ -186,8 +183,7 @@ $(document).ready(function() {
    	data:{id:id},
    	url:'calendar/DeleteEvent',
    	success:function(res) {
-   		console.log(res);
-      $('#editdeleteevent').modal('hide');
+   	$('#editdeleteevent').modal('hide');
       CalendarRefresh()
       
 

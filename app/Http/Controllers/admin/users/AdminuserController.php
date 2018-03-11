@@ -123,7 +123,7 @@ class AdminuserController extends Controller
 
     public function GetUserData()
     {
-        $users = User::all();
+        $users=User::all();
         $usertypes = Usertyp::all();
 
         return response($users);
@@ -134,7 +134,7 @@ class AdminuserController extends Controller
 
     public function GeneratePassword()
     {
-        $hashed_random_password = str_random(16);
+        $hashed_random_password = str_random(6);
         return response($hashed_random_password);
     }
 

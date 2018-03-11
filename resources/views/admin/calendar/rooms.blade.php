@@ -1,17 +1,13 @@
 ﻿@extends ('Layouts.template')
 
-//
+
 @section ('content')
 
- @include ('calendarform')
- @include ('showevent')
- @include('inputincalendarform')
- @include ('editdeleteevent')
-<style type="text/css">
-    /*.fc-past {
-    background-color: silver;
-}*/
-</style>
+ @include ('admin.calendar.calendarform')
+ @include ('admin.calendar.showevent')
+ @include('admin.calendar.inputincalendarform')
+ @include ('admin.calendar.editdeleteevent')
+
     <script src="{{asset('js/moment.js')}}"></script>
     
 
@@ -21,16 +17,14 @@
     
     <script src="{{asset('calendar/fullcalendar.js')}}"></script>
     <script src="{{asset('calendar/scheduler/dist/scheduler.js')}}"></script>
-    <script src="{{asset('calendar/calendarscript.js')}}"></script>
+    <script src="{{asset('js/admin/calendarscript.js')}}"></script>
     <script src="{{asset('calendar/locale/ru.js')}}"></script>
 
 
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <script type="text/javascript">
-    	
-    </script>
+   
      
 </head>
 <body>
