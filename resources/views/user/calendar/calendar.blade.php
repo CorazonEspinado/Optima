@@ -1,4 +1,7 @@
 @extends ('Layouts.template')
+@include('user.calendar.viewownevent')
+@include('user.calendar.newownevent')
+@include('user.calendar.inputowncalendar')
 
 
 @section ('content')
@@ -21,7 +24,7 @@
      
 </head>
 <body>
-	<button type="button"  data-toggle="modal" data-target="#calendarform1" id="calendarform1">Добавить событие</button>
+	<button type="button"  data-toggle="modal" data-target="#addownevent" id="calendarform1">Добавить событие</button>
 
 
 	<div id='usercalendar'></div>

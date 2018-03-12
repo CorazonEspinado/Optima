@@ -56,7 +56,7 @@ Route::post('/structure/storeStructure', 'admin\structures\AdminstructureControl
 Route::get('structures/StructureList', 'admin\structures\AdminstructureController@GetStructures');
 
 
-});
+
 //-----------------Admin Calendar
   Route::get('admin/rooms', 'admin\calendar\RoomController@index');
  Route::get('admin/structures/StructureCalendar', 'admin\structures\AdminstructureController@GetStructuresCalendar');
@@ -68,24 +68,23 @@ Route::post('admin/calendar/GetEventInfo', 'admin\calendar\RoomController@GetEve
 Route::post('admin/calendar/DeleteEvent', 'admin\calendar\RoomController@DeleteEvent');
 Route::post('admin/calendar/checkEvent', 'admin\calendar\RoomController@checkEvent');
 
-
+});
 
 //------------------User Calendar/
  
  Route::get('users/calendar/UserGetRooms', 'users\calendar\UsersRoomController@GetRooms'); 
  Route::get('users/calendar/GetCalendar', 'users\calendar\UsersRoomController@GetCalendar');
  Route::post('users/calendar/GetEventInfo', 'users\calendar\UsersRoomController@GetEventInfo');
+ Route::get('CheckAuthorization','users\calendar\UsersRoomController@CheckAuth');
  
- 
-
     //
 
 Route::get('userstasks', 'users\tasks\UsertaskController@index');
 Route::get('usersrooms', 'users\calendar\UsersRoomController@index');
 Route::post('/tasks/DelayedTaskNotification', 'UsertaskController@DelayedTaskNotification');
-
 Route::get('/tasks/GetUserTasks', 'users\tasks\UsertaskController@GetUserTasks');
 Route::post('/tasks/StatusUpdate', 'users\tasks\UsertaskController@TaskStatusUpdate');
+
 });
 
 Auth::routes();

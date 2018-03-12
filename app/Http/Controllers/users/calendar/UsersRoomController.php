@@ -29,7 +29,7 @@ return view ('user.calendar.calendar', compact('user','structures'));
     
     public function GetRooms() {
 
-        
+        $user=Auth::user();
 	$rooms=Structure::all();
 	return response($rooms);
 }
@@ -42,5 +42,10 @@ public function GetEventInfo(request $request) {
     
 	$event=Calendar::find($request->id);
 	return response ($event);
+}
+
+public function CheckAuth() {
+    $user=auth::user();
+    return response ($user);
 }
 }

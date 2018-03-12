@@ -2,6 +2,16 @@ function CalendarRefresh() {
   $('#usercalendar').fullCalendar('refetchEvents');
 }
 
+function CheckAuth() {
+    $.ajax( {
+    url:'CheckAuthorization',
+    success:function(user) {
+        $user=user.name +' '+user.surname;
+        $userid=user.id;
+    }
+})
+}
+
 function Calendar() {
 	$('#usercalendar').fullCalendar({
 
@@ -18,10 +28,12 @@ function Calendar() {
         alert ('Error! Date already in the past');
        } else {
         
-       $('#calendarform1').modal('show');
-      $('#room').val(eventSources.id);
-      $('#datetimepicker').val(clickDate);
-      $('#datetimepicker1').val(NextDate);
+       $('#inputinowncalendar').modal('show');
+      $('#own_room').val(eventSources.id);
+      $('#datetimepicker5').val(clickDate);
+      $('#datetimepicker6').val(NextDate);
+      $('#user').val($user);
+      $('#userid').val($userid);
      }
 		
 		},
@@ -52,7 +64,7 @@ function Calendar() {
           $('#deleteid').val(res.id);
           }
 				
-					console.log ('Event information');
+console.log ('Event information');
 			
 				},
 				error:function(res) {
@@ -100,6 +112,7 @@ function Calendar() {
 $(document).ready(function() {
 
 	console.log ('Calendar ready');
+        CheckAuth();
 
 	Calendar();
   setInterval(Calendar(), 3000);
