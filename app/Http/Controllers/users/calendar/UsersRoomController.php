@@ -9,6 +9,8 @@ use App\User;
 use Auth;
 use App\structure;
 use App\Calendar;
+use App\Exceptions\Handler;
+
 
 
 class UsersRoomController extends Controller
@@ -46,12 +48,9 @@ public function GetEventInfo(request $request) {
 
 public function CheckAuth() {
     $user=auth::user();
-   if(response()->json(['message' => 'Unauthenticated.'], 401)) {
-    return redirect('/');
-   } else {
     
     return response ($user);
-   }
+   
 }
 
  public function storeEvent(Request $request) {
