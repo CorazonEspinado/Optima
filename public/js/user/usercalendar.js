@@ -48,22 +48,24 @@ function Calendar() {
         url:'users/calendar/GetEventInfo',
 				success:function(res) {
           CurrentDateTime=moment().format('YYYY-MM-DD HH:mm');
+
             if (res.end<CurrentDateTime) {
-            $('#showevent').modal('show');
+                //alert (res.end);
+            $('#showownevent').modal('show');
           $('#eventtypeinfo').val(res.title);
           $('#start').val(res.start);
           $('#end').val(res.end);
           $('#Ispolnitelj').val(res.ispolnitelj);
           $('#1234').val(res.resourceId);
-          $('#deleteid').val(res.id);
+          $('#userdeleteid').val(res.id);
           } else {
-            $('#editdeleteevent').modal('show');
+          $('#deleteownevent').modal('show');
             $('#eventtypedelete').val(res.title);
           $('#eventstartdelete').val(res.start);
           $('#eventenddelete').val(res.end);
           $('#ispolniteljdelete').val(res.ispolnitelj);
           $('#eventroomdelete').val(res.resourceId);
-          $('#deleteid').val(res.id);
+          $('#userdeleteid').val(res.id);
           }
 				
 console.log ('Event information');
@@ -191,14 +193,14 @@ $(document).ready(function() {
   })
 
 //-----------------------------------------------------------------------------------  
-   $(document).on('click', '#DeleteEvent', function (e) {
-   	 var id = $('#deleteid').val();
+   $(document).on('click', '#UserDeleteEvent', function (e) {
+   	 var id = $('#userdeleteid').val();
      $.ajax({
    	type:'POST',
    	data:{id:id},
-   	url:'calendar/DeleteEvent',
+   	url:'users/calendar/UserDeleteEvent',
    	success:function(res) {
-   	$('#editdeleteevent').modal('hide');
+   	$('#deleteownevent').modal('hide');
       CalendarRefresh()
       
 

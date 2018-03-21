@@ -78,6 +78,7 @@ Route::post('admin/calendar/checkEvent', 'admin\calendar\RoomController@checkEve
  Route::post('users/calendar/GetEventInfo', 'users\calendar\UsersRoomController@GetEventInfo');
  Route::get('CheckAuthorization','users\calendar\UsersRoomController@CheckAuth');
  Route::post('users/calendar/storeEvent', 'users\calendar\UsersRoomController@storeEvent');
+ Route::post('users/calendar/UserDeleteEvent', 'users\calendar\UsersRoomController@UserDeleteEvent');
  
     //
 

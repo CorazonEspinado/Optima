@@ -65,8 +65,14 @@ public function CheckAuth() {
    		'ispolnitelj'=>$request['user'],
    		'resourceId'=>$request['own_room'],
         ]);
-   	
-   	  return response ($events);
-
+   	   	  return response ($events);
    }
+   public function UserDeleteEvent(request $request) {
+
+	  $event=Calendar::find($request->id);
+	
+	$event->Delete();
+	return response ($event);
+}
+   
 }

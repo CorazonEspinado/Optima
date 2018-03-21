@@ -2,6 +2,8 @@
 @include('user.calendar.viewownevent')
 @include('user.calendar.newownevent')
 @include('user.calendar.inputowncalendar')
+@include('user.calendar.showowneventinfo')
+@include('user.calendar.deleteownevent')
 
 
 @section ('content')
