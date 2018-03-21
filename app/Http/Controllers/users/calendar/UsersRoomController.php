@@ -9,7 +9,7 @@ use App\User;
 use Auth;
 use App\structure;
 use App\Calendar;
-use App\Exceptions\Handler;
+
 
 
 
@@ -47,11 +47,15 @@ public function GetEventInfo(request $request) {
 }
 
 public function CheckAuth() {
-    $user=auth::user();
-    
+    if (Auth::check()) {
+        $user=auth::user();
     return response ($user);
+    } else {
+    return ('net!');
+    }
    
-}
+    
+  }
 
  public function storeEvent(Request $request) {
    	$this->validate($request,[

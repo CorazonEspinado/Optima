@@ -58,15 +58,12 @@ class Handler extends ExceptionHandler
 
         if ($request->expectsJson()) {
 
- return response()->json(['error' => 'Unauthenticated.'], 401); 
+ return response()->json(['Status'=>'Error', 'message' => 'Unauthorized!!!!'], 401); 
+ 
+//            $response = ['status' => 'Error','message' => 'Unauthorized!!!!'];
 
-            $response = ['status' => 'error','message' => 'You pass invalid token'];
-
-            return response()->json($response);
-
-        }
-
+           // return response()->json($response);
+          }
         return redirect()->guest('login');
-
     }
 }

@@ -8,7 +8,7 @@ function CheckAuth() {
     success:function(user) {
         $user=user.name +' '+user.surname;
         $userid=user.id;
-        console.log(user);
+//        alert(user.status);
     }
 })
 }
