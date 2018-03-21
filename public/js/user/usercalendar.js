@@ -8,6 +8,7 @@ function CheckAuth() {
     success:function(user) {
         $user=user.name +' '+user.surname;
         $userid=user.id;
+        console.log(user);
     }
 })
 }
@@ -19,6 +20,7 @@ function Calendar() {
 		theme:false,
 		resources: 'users/calendar/UserGetRooms',
 		dayClick: function(date, jsEvent, view, eventSources) {
+                    CheckAuth();
       datenow=moment().format("YYYY-MM-DD HH:mm");
     
 			 var clickDate=date.format('YYYY-MM-DD HH:mm');

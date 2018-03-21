@@ -46,7 +46,12 @@ public function GetEventInfo(request $request) {
 
 public function CheckAuth() {
     $user=auth::user();
+   if(response()->json(['message' => 'Unauthenticated.'], 401)) {
+    return redirect('/');
+   } else {
+    
     return response ($user);
+   }
 }
 
  public function storeEvent(Request $request) {
