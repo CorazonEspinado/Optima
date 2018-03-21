@@ -11,7 +11,8 @@ function CheckAuth() {
 //        alert(user.status);
     },
     error:function(user){
-        window.location.href='/';
+        window.location.href='/login';
+       alert('Session off!')
     }
 })
 }
@@ -125,7 +126,7 @@ $(document).ready(function() {
 
 	Calendar();
   setInterval(Calendar, 3000);
-  setInterval(CheckAuth, 200000);
+  setInterval(CheckAuth, 100000);
 	
 //-----------------------------------------
 	
