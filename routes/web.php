@@ -66,9 +66,10 @@ Route::get('admin/calendar/GetCalendar', 'admin\calendar\RoomController@GetCalen
 Route::get('admin/calendar/GetRooms', 'admin\calendar\RoomController@GetRooms');
 Route::post('admin/calendar/GetEventInfo', 'admin\calendar\RoomController@GetEventInfo');
 Route::post('admin/calendar/DeleteEvent', 'admin\calendar\RoomController@DeleteEvent');
-Route::post('admin/calendar/checkEvent', 'admin\calendar\RoomController@checkEvent');
+
 
 });
+Route::post('admin/calendar/checkEvent', 'admin\calendar\RoomController@checkEvent');//вынесено из админской части, исрльзуется клиентом тоже
 
 //------------------User Calendar/
  
@@ -76,6 +77,7 @@ Route::post('admin/calendar/checkEvent', 'admin\calendar\RoomController@checkEve
  Route::get('users/calendar/GetCalendar', 'users\calendar\UsersRoomController@GetCalendar');
  Route::post('users/calendar/GetEventInfo', 'users\calendar\UsersRoomController@GetEventInfo');
  Route::get('CheckAuthorization','users\calendar\UsersRoomController@CheckAuth');
+ Route::post('users/calendar/storeEvent', 'users\calendar\UsersRoomController@storeEvent');
  
     //
 

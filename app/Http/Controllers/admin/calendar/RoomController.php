@@ -77,7 +77,7 @@ public function checkEvent(request $request) {
 
   $eventcheck=Calendar::where('resourceId', $request->room)
   ->whereBetween ('start', [$request->event_start,$request->event_end])
-  // ->orBetween ('end', [$request->event_start, $request->event_end])
+   ->whereBetween ('end', [$request->event_start, $request->event_end])
   ->get();
   return response ($eventcheck);
 }

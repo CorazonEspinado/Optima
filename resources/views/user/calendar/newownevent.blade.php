@@ -9,7 +9,7 @@
                 </div>
                  {!! csrf_field() !!}
 
-                    <form  method="POST"  id="calendarform">
+                    <form  method="POST"  class="owncalendarform">
                        
 
                 <div class="modal-body">
@@ -25,7 +25,7 @@
 	<div class="col-4-md">
    	 <div class="form-group">
         <p><label for="event_start">Начало</label>
-        <input type="text" name="own_event_start" id="datetimepicker3"/></p>
+        <input type="text" name="own_startdate" id="datetimepicker3"/></p>
     </div>
 </div>
 
@@ -33,7 +33,7 @@
          <div class="col-4-md">
           <div class="form-group">
         <p><label for="event_end">Конец</label>
-        <input type="text" name="own_event_end" id="datetimepicker4"/></p>
+        <input type="text" name="own_enddate" id="datetimepicker4"/></p>
     </div>
 </div>
 
@@ -53,8 +53,8 @@
 <div class="col-4-md">
           <div class="form-group">
           	<p><label for="own_name">Исполнитель:</label>
-              <input type="text" name="ownname" data-id="{{$user->id}}" value='{{$user->name}} {{$user->surname}}' readonly=""></p>
-       
+              <input type="text" name="user" data-id="{{$user->id}}" value='{{$user->name}} {{$user->surname}}' readonly=""></p>
+                <input type="hidden" name="userid" value="{{$user->id}}">
  
           	</div>
           </div>

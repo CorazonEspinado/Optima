@@ -29,11 +29,13 @@ function Calendar() {
        } else {
         
        $('#inputinowncalendar').modal('show');
-      $('#own_room').val(eventSources.id);
+      $('#own_room').val(eventSources.name);
       $('#datetimepicker5').val(clickDate);
       $('#datetimepicker6').val(NextDate);
       $('#user').val($user);
       $('#userid').val($userid);
+      $('#ownroomid').val(eventSources.id);
+      
      }
 		
 		},
@@ -119,9 +121,9 @@ $(document).ready(function() {
 	
 //-----------------------------------------
 	
-  $('#calendarform').on('submit', function(e) {
+  $('.owncalendarform').on('submit', function(e) {
   	e.preventDefault();
-    
+       
   	var otherValue = $(this).find('option:selected').attr('data-othervalue');
    date=$(this).val
          data = $(this).serializeArray();
@@ -152,7 +154,7 @@ $(document).ready(function() {
       type:'POST',
       dataType:'json',
       data:data,
-      url:'calendar/checkEvent',
+      url:'admin/calendar/checkEvent',
       success:function(response) {
           if (!$.trim(response)) {
            //-----------------------
@@ -160,11 +162,12 @@ $(document).ready(function() {
           type:'POST',
           dataType:'json',
           data:data,
-          url:'calendar/storeEvent',
+          url:'users/calendar/storeEvent',
           success:function(data) {
             Calendar();
-        $('#calendarform1').modal('hide');
-        CalendarRefresh();
+        $('#inputinowncalendar').modal('hide');
+        $('#addownevent').modal('hide');
+          CalendarRefresh();
           },
           error:function(data) {
           },

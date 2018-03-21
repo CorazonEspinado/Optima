@@ -48,4 +48,25 @@ public function CheckAuth() {
     $user=auth::user();
     return response ($user);
 }
+
+ public function storeEvent(Request $request) {
+   	$this->validate($request,[
+            'own_event_type'=>'required',
+          'own_startdate'=>'required',
+            'own_enddate'=>'required',
+          'user'=>'required',
+          'own_room'=>'required'
+        ]);
+   	$events=Calendar::Create([
+       'title'=>$request['own_event_type'],
+       'info'=>$request['own_room'],
+        'end'=>$request['own_enddate'],
+   		'start'=>$request['own_startdate'],
+   		'ispolnitelj'=>$request['user'],
+   		'resourceId'=>$request['own_room'],
+        ]);
+   	
+   	  return response ($events);
+
+   }
 }

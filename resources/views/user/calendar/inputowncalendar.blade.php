@@ -9,7 +9,7 @@
                 </div>
                  {!! csrf_field() !!}
 
-                    <form  method="POST"  id="calendarform">
+                    <form  method="POST"  class="owncalendarform">
                        
 
                 <div class="modal-body">
@@ -40,7 +40,8 @@
 <div class="col-4-md">
           <div class="form-group">
           	<p><label for="room">Помещение</label>
-              <input type="text" name="own_room" id="own_room" readonly="" /></p>
+              <input type="text" name="own_room_name" id="own_room" readonly="" /></p>
+             
  
           	</div>
           </div>
@@ -50,6 +51,8 @@
           	<p><label for="ispolnitelj">Исполнитель</label>
                     <input type="text" id='user' name='user' readonly="">
                     <input type='hidden' name='userid' id='userid'>
+                    <input type='hidden' name='own_room' id='ownroomid'>
+                    
  
           	</div>
           </div>
