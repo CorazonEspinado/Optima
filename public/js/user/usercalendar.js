@@ -9,6 +9,9 @@ function CheckAuth() {
         $user=user.name +' '+user.surname;
         $userid=user.id;
 //        alert(user.status);
+    },
+    error:function(user){
+        window.location.href='/';
     }
 })
 }
@@ -29,7 +32,7 @@ function Calendar() {
        if (clickDate<datenow){
         alert ('Error! Date already in the past');
        } else {
-        
+        CheckAuth();
        $('#inputinowncalendar').modal('show');
       $('#own_room').val(eventSources.name);
       $('#datetimepicker5').val(clickDate);
@@ -42,7 +45,7 @@ function Calendar() {
 		
 		},
 		eventClick: function(eventSources) {
-
+                        CheckAuth();
 			data=eventSources.id;
      		$.ajax( {
 				type:'POST',
@@ -117,11 +120,12 @@ console.log ('Event information');
 
 $(document).ready(function() {
 
-	console.log ('Calendar ready');
+	console.log ('User Calendar ready');
         CheckAuth();
 
 	Calendar();
-  setInterval(Calendar(), 3000);
+  setInterval(Calendar, 3000);
+  setInterval(CheckAuth, 200000);
 	
 //-----------------------------------------
 	

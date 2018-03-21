@@ -47,12 +47,10 @@ public function GetEventInfo(request $request) {
 }
 
 public function CheckAuth() {
-    if (Auth::check()) {
+   
         $user=auth::user();
     return response ($user);
-    } else {
-    return ('net!');
-    }
+  
    
     
   }
