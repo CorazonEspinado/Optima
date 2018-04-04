@@ -45,5 +45,16 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+public function logout()
+{
+        session_unset();
+        Session()->flush();
+//    $this->guard()->logout();
 
+   
+
+    
+
+    return redirect('/login');
+}
 }

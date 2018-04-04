@@ -1,8 +1,8 @@
 @extends ('layouts.template')
-
+@section('pageTitle', 'Main')
 @section ('content')
 
-
+{{ csrf_field() }}
     <div class="container">
  
         <ul class="nav justify-content-center">

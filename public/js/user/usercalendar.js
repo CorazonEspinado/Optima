@@ -11,8 +11,16 @@ function CheckAuth() {
 //        alert(user.status);
     },
     error:function(user){
-        window.location.href='/login';
-       alert('Session off!')
+//       $.ajax({
+//      headers: {
+//            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//        },
+//        url:'/logout',
+//    });
+window.location.href='/logout';
+       
+        
+//       alert('Session off!')
     }
 })
 }
@@ -47,6 +55,7 @@ function Calendar() {
 		},
 		eventClick: function(eventSources) {
                         CheckAuth();
+                        
 			data=eventSources.id;
      		$.ajax( {
 				type:'POST',

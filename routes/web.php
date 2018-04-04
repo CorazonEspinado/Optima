@@ -89,7 +89,8 @@ Route::get('/tasks/GetUserTasks', 'users\tasks\UsertaskController@GetUserTasks')
 Route::post('/tasks/StatusUpdate', 'users\tasks\UsertaskController@TaskStatusUpdate');
 
 });
-
+//Route::get('/logout', 'MainController@logout');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 

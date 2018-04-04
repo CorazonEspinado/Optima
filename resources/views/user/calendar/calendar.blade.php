@@ -1,4 +1,5 @@
 @extends ('Layouts.template')
+@section('pageTitle', 'Calendar!')
 @include('user.calendar.viewownevent')
 @include('user.calendar.newownevent')
 @include('user.calendar.inputowncalendar')
@@ -7,6 +8,7 @@
 
 
 @section ('content')
+{{ csrf_field() }}
 <script src="{{asset('js/moment.js')}}"></script>
    
     <link href="{{ asset('calendar/fullcalendar.css') }}" rel="stylesheet">

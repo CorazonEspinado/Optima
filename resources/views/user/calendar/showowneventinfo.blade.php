@@ -1,6 +1,6 @@
 <div class="modal fade" id="showownevent" tabindex="-1" role="dialog" aria-labelledby="showownevent" aria-hidden="true" >
     <div class="modal-dialog" role="document">
-
+{{ csrf_field() }}
 
             <div class="modal-content" id="modal-content">
                 <div class="modal-header">

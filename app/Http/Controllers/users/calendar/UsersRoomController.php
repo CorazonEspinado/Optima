@@ -50,8 +50,6 @@ public function CheckAuth() {
    
         $user=auth::user();
     return response ($user);
-  
-   
     
   }
 
