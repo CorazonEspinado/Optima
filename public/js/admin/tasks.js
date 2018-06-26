@@ -58,83 +58,9 @@ table = $('#task-table').DataTable( {
     } );
 });
 
-   //          var now = moment();//.format('YYYY-MM-DD  h:mm:ss ');
-   //          //    tmp=moment(value.Izpildit_lidz).format('YYYY-MM-DD');
-   //
-   //              tmp1=moment().format('YYYY-MM-DD');
-   
-    // var now = moment();//.format('YYYY-MM-DD  h:mm:ss ');
-    //             tmp=moment(Izpildit_lidz).format('YYYY-MM-DD');
-    //            console.log(tmp);
-    //             tmp1=moment().format('YYYY-MM-DD');
-   
-    //             if (status=="Выполнено") {
-    //                $('#uzd' + value.id).css({ 'background-color' : '#00ffff' });
-    //
-    //                $('#Izpildits'+value.id).hide();
-    //                 $('[data-edit=edittask'+value.id+']').hide();
-    //                 $('[data-delete=deletetask'+value.id+']').hide();
-    //
-    //             } else
-    //
-    //            if (moment(value.Izpildit_lidz) < now) {
-    //
-    //                $('#uzd' + value.id).css({ 'background-color' : '#cc6699' });
-    //            } else
-    //                if (tmp==tmp1) {
-    //
-    //                    $('#uzd' + value.id).css({ 'background-color' : '#ffff00' });
-    //
-    //
-    //            }
-
-
-
 function TaskList() {
   table.ajax.reload();
-  //Done();
-
-
   }
-
-
-
-                // var now = moment();//.format('YYYY-MM-DD  h:mm:ss ');
-                // tmp=moment(value.Izpildit_lidz).format('YYYY-MM-DD');
-    //         //    console.log(tmp);
-    //             tmp1=moment().format('YYYY-MM-DD');
-    
-    
-    //             if (value.status=="Выполнено") {
-    //                $('#uzd' + value.id).css({ 'background-color' : '#00ffff' });
-    
-    //                $('#Izpildits'+value.id).hide();
-    //                 $('[data-edit=edittask'+value.id+']').hide();
-    //                 $('[data-delete=deletetask'+value.id+']').hide();
-    
-    //             } else
-    
-    //            if (moment(value.Izpildit_lidz) < now) {
-    
-    //                $('#uzd' + value.id).css({ 'background-color' : '#cc6699' });
-    //            } else
-    //                if (tmp==tmp1) {
-    
-    //                    $('#uzd' + value.id).css({ 'background-color' : '#ffff00' });
-    
-    //                }
-    
-    //         });
-    
-    
-    
-    
-    
-    //     },
-    //     error: function (data) {
-    //         console.log('Error');
-    //     }
-    // })
 
 //-----------------------------------------
 
@@ -145,7 +71,6 @@ function TaskList() {
 function CheckDelayedTasks() {
 
 TimeNow=moment().format('YYYY-MM-DD HH:mm');
-// alert (TimeNow);
 
     $.ajax({
 
@@ -164,43 +89,19 @@ TimeNow=moment().format('YYYY-MM-DD HH:mm');
 
             $.each(delay, function(i, value) {
 
-
-                  // console.log (value.id+'izpildit'+moment(value.Izpildit_lidz).format('YYYY-MM-DD')+'now'+TimeNow);
-
                 if (moment(value.Izpildit_lidz)< moment() && value.status=='Выдано поручение') {
-                    //    alert ('a');
-
-
-   //                 console.log ('id'+value.id+'izpildit'+moment(value.Izpildit_lidz).format('YYYY-MM-DD')+'time now'+TimeNow);
-
+             
                     n=n+1;
                     $('#admindelay').html('<h4 align="center">Невыполненных задач:  '+n+'</h4>');
                     $('#delaytable').append("<tr><td bgcolor='#ff4500'>"+value.id+"</td><td bgcolor='#ff4500'>"+value.name+"</td>" +
                         "<td bgcolor='#ff4500'>"+value.uzdevums+"</td><td bgcolor='#ff4500'>"+value.Izpildit_lidz+"</td></tr>");
 
-
-                } else {
-                    //  alert ('b')
-// 
-
-                }
+                } 
 
             });
-
             $('#delaytable').append('</tr>');
             $('#delaytable').append('</table>');
 
-            // $(function () {
-            //     $('#taskdelaymessage').dialog({
-            //   modal: true,
-            //     title: "Невыполненных задач:"+n,
-            //      buttons: {
-            //           "Приготовить вазелин!": function () {
-            //            $(this).dialog("close");
-            //       }
-            //    }
-            //       });
-            //    });
         }
     });
 
@@ -211,7 +112,7 @@ $(document).ready(function() {
 
     console.log('Task list ready');
 
-    setInterval(TaskList, 5000);
+//    setInterval(TaskList, 5000);
     CheckDelayedTasks();
    setInterval(CheckDelayedTasks, 5000);
 //Done();
@@ -243,12 +144,8 @@ $(document).ready(function() {
             success: function (data) {
                 $('#addNewTask').modal('hide');
 
-
-
                 console.log('New task data received');
-
                 TaskList();
-
             },
 
             error: function(xhr, status, error) {
@@ -256,9 +153,7 @@ $(document).ready(function() {
                 var err = eval("(" + xhr.responseText + ")");
                 alert(err.message);
             }
-
         });
-
     });
 
     //------------------------------------------------
@@ -272,10 +167,7 @@ $(document).ready(function() {
             {id: id}, 
             function (data) {
             temp.css("background", "green");
-
             TaskList();
-
-
             console.log('Uzdevums Izpildits');
 
         })
@@ -284,7 +176,6 @@ $(document).ready(function() {
 //--------------------------------------------------------
 
     $(document).on('click', '#deletetask', function (e) {
-
         var data = table.row( $(this).parents('tr') ).data();
         var id = data.id;
         $.post('/tasks/destroy', {id: id}, function (data) {
@@ -295,7 +186,6 @@ $(document).ready(function() {
     });
 
 //---------------------------------------------------------------
-
 
     $(document).on('click', '#edittask', function (e) {
 
@@ -353,7 +243,6 @@ $(document).ready(function() {
     });
 
     //----------------------------------
-
 
 });
 

@@ -21,9 +21,9 @@ class MainController extends Controller
      */
     public function index()
     {
-   if ((Auth::user()->usertype)=="Пользователь") {
+   if ((Auth::user()->usertype)=="0") {
          return view ('user.main');
-     } else if ((Auth::user()->usertype)=="Администратор") {
+     } else if ((Auth::user()->usertype)=="1") {
          return view ('admin.main');
      };
 

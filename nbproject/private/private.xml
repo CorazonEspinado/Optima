@@ -3,17 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/users/calendar/UsersRoomController.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/Auth/LoginController.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/public/js/user/usercalendar.js</file>
-            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/MainController.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/resources/views/user/main.blade.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/resources/views/admin/Users/pass</file>
+            <file>file:/D:/OSPanel/domains/Optima/public/js/admin/structures.js</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Structure.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Calendar.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/admin/calendar/RoomController.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Providers/AppServiceProvider.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/public/js/admin/calendarscript.js</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Providers/BroadcastServiceProvider.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/admin/structures/AdminstructureController.php</file>
             <file>file:/D:/OSPanel/domains/Optima/routes/web.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/resources/views/layouts/template.blade.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/resources/views/auth/login.blade.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/users/tasks/UsertaskController.php</file>
-            <file>file:/D:/OSPanel/domains/Optima/resources/views/user/calendar/calendar.blade.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Role.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/HomeController.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Permission.php</file>
+            <file>file:/D:/OSPanel/domains/Optima/app/Http/Controllers/Controller.php</file>
         </group>
     </open-files>
 </project-private>

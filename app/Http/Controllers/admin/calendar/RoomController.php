@@ -13,6 +13,7 @@ use App\Calendar;
 
 class RoomController extends Controller
 {
+    
    public function index() {
 $structures=structure::all();
 $users=User::all();

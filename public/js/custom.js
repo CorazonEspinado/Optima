@@ -21,6 +21,6 @@ $(window).on('load', function() {
         }
     });
 
-CheckAuth();
-setInterval(CheckAuth, 100000);
+//CheckAuth();
+//setInterval(CheckAuth, 100000);
 });

@@ -11,6 +11,12 @@ function UserList() {
 
             $('#user_info').empty().append(data);
                $.each(data, function (i, value) {
+                   if (value.usertype=='1') {
+                       usertype="Администратор";
+                   } else {
+                      usertype="Пользователь"; 
+                   }
+
                 var tr = $("<tr id=uzd"+value.id+"/>");
                 tr.append( {
                 });
@@ -30,7 +36,7 @@ function UserList() {
                        text: value.struktura
                    }));
                    tr.append($("<td/>", {
-                       text: value.usertype
+                       text: usertype
                    }));
                    tr.append($("<td/>", {
                        text: value.email
@@ -153,12 +159,17 @@ $(document).ready(function () {
 
             success: function (info) {
                 console.log('User info received');
+                if (info.usertype=='1') {
+                       usertype="Администратор";
+                   } else {
+                      usertype="Пользователь"; 
+                   }
                 $('#showuserinfo').modal('show');
                 $('#infoname').val(info.name);
                 $('#infosurname').val(info.surname);
                 $('#infologin').val(info.login);
                 $('#infostruktura').val(info.struktura);
-                $('#infousertype').val(info.usertype);
+                $('#infousertype').val(usertype);
                 $('#infoemail').val(info.email);
                 $('#infopilseta').val(info.pilseta);
                 $('#infoiela').val(info.iela);
@@ -185,13 +196,18 @@ $(document).ready(function () {
             dataType: 'json',
 
             success: function (info) {
+                if (info.usertype=='1') {
+                       usertype="Администратор";
+                   } else {
+                      usertype="Пользователь"; 
+                   }
                 console.log('User info received for editing');
                 $('#edituserinfo').modal('show');
                 $('#editname').val(info.name);
                 $('#editsurname').val(info.surname);
                 $('#editlogin').val(info.login);
                 $('#editstruktura').val(info.struktura);
-                $('#editusertype').val(info.usertype);
+                $('#editusertype').val(usertype);
                 $('#editemail').val(info.email);
                 $('#editpilseta').val(info.pilseta);
                 $('#editiela').val(info.iela);
